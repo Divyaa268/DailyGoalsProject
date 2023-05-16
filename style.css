@@ -56,4 +56,27 @@ button:hover
     color: black;
     display: flex;
     align-items: center;
+    margin: 10px;
+}
+
+.task > div 
+{
+    width: 100%;
+}
+
+.task span
+{
+    color: rgba(0, 0, 0, 0.632);
+}
+
+.delBtn
+{
+    border-radius: 100%;
+    width: 30px;
+    height: 30px;
+    font-size: 1.6rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: red;
 }
