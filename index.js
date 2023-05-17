@@ -28,7 +28,16 @@ function showAllTasks()
 
     btn.innerText = "-";
 
-    
+    btn.addEventListener("click", () => 
+    {
+        removeTasks();
+        tasks.splice(index, 1);
+        localStorage.setItem("tasks", JSON.stringify(tasks));
+        
+        showAllTasks();
+        // console.log(tasks); 
+    })
+
     div.append(btn);
 
     container.append(div);
@@ -60,6 +69,8 @@ form.addEventListener("submit", (e) =>
         
     });
     // console.log(tasks);
+
+    localStorage.setItem("tasks", JSON.stringify(tasks));
 
     showAllTasks();
 });
