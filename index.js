@@ -3,7 +3,9 @@ const description = document.getElementById("description");
 const form = document.querySelector("form");
 const container = document.querySelector(".container");
 
-const tasks = [];
+const tasks = localStorage.getItem("tasks") ? JSON.parse(localStorage.getItem("tasks")) : [];
+
+showAllTasks(); // to display on starting the page if tasks are present
 
 function showAllTasks()
 {
@@ -33,7 +35,7 @@ function showAllTasks()
         removeTasks();
         tasks.splice(index, 1);
         localStorage.setItem("tasks", JSON.stringify(tasks));
-        
+
         showAllTasks();
         // console.log(tasks); 
     })
